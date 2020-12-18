@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BasicUI</string>
+    <string name="userAgreement">By clicking this box you agree to the Privacy Policy along with the Terms and Conditions </string>
+</resources>

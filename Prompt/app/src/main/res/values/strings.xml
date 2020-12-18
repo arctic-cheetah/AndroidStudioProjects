@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Prompt</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+</resources>

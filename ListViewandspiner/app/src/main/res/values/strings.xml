@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ListViewAndSpinner</string>
+    <string-array name="myNames">
+        <item>Jay</item>
+        <item>Riley</item>
+        <item>Jebediah</item>
+        <item>Excelsior</item>
+    </string-array>
+</resources>
