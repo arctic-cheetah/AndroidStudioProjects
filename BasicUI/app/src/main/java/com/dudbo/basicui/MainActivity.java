@@ -58,41 +58,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Password must have at least 8 characters or more", Toast.LENGTH_LONG).show();
         }
         else if (v.getId() == R.id.registerButton) {
-            boolean success = true;
-            if (name2.isEmpty()) {
-                Toast.makeText(this, "Name cannot be empty ", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
-            if (email2.isEmpty()) {
-                Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
-            if (password2.length() < 8) {
-                Toast.makeText(this, "Password is too short, and it must be at least 8 characters long", Toast.LENGTH_LONG).show();
-                success = false;
-            }
-            if (!reEnterPassWord2.equals(password2)) {
-                Toast.makeText(this, "Re-entered password must be identical to the password", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
-            if (gender.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "Must select a gender", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
-            if (nationSpinner2.isEmpty()) {
-                Toast.makeText(this, "Country cannot be empty", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
-            if (!agreement.isChecked()) {
-                Toast.makeText(this, "Must accept user agreement", Toast.LENGTH_SHORT).show();
-                success = false;
-            }
+            boolean success = validEntry();
             if (success) {
                 Snackbar.make(parent, "Successfully registered user", Snackbar.LENGTH_LONG).show();
             }
         }
     }
-
+    //A function that checks for the validity of an input
+    public boolean validEntry () {
+        if (name2.isEmpty()) {
+            Toast.makeText(this, "Name cannot be empty ", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (email2.isEmpty()) {
+            Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (password2.length() < 8) {
+            Toast.makeText(this, "Password is too short, and it must be at least 8 characters long", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if (!reEnterPassWord2.equals(password2)) {
+            Toast.makeText(this, "Re-entered password must be identical to the password", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (gender.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "Must select a gender", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (nationSpinner2.isEmpty()) {
+            Toast.makeText(this, "Country cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!agreement.isChecked()) {
+            Toast.makeText(this, "Must accept user agreement", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
